@@ -3,6 +3,11 @@ require "sort"
 
 describe Sort do
   
+  before :all do
+    @unsorted_array = DataSet.unsorted_array
+    @sorted_array = DataSet.sorted_array
+  end
+  
   it "should perform bubblesort" do
     sort_and_check Sort::BubbleSort.new
   end
@@ -12,7 +17,7 @@ describe Sort do
   end
 
   def sort_and_check(algorithm)
-    algorithm.sort(DataSet.unsorted_array).should == DataSet.sorted_array
+    algorithm.sort(@unsorted_array).should == @sorted_array
   end
 
 end
