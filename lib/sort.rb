@@ -2,7 +2,7 @@ module Sort
   
   class BubbleSort
 
-    def sort(array)
+    def sort!(array)
       last_index = array.size - 1
       0.upto(last_index) do |i|
         last_index.downto(1) do |j|
@@ -15,7 +15,7 @@ module Sort
     private
 
     def compare_and_swap(array, index)
-      previous = index-1
+      previous = index - 1
       if array[index] < array[previous]
         min = array[index]
         array[index] = array[previous]
@@ -27,7 +27,7 @@ module Sort
   
   class SelectionSort
     
-    def sort(array)
+    def sort!(array)
       last_index = array.size - 1
       0.upto(last_index) do |i|
         i.upto(last_index) do |j|
@@ -51,8 +51,17 @@ module Sort
 
   class InsertionSort
     
-    def sort(array)
-      # TODO
+    def sort!(array)
+      last_index = array.size - 1
+      1.upto(last_index) do |i|
+        value = array[i]
+        j = i - 1
+        while j >= 0 and array[j] > value
+          array[j+1] = array[j]
+          j -= 1
+        end
+        array[j+1] = value
+      end
       array
     end
     

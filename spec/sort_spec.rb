@@ -17,11 +17,11 @@ describe Sort do
   end
 
   it "should perform insertion sort" do
-    #sort_and_check Sort::InsertionSort.new
+    sort_and_check Sort::InsertionSort.new
   end
 
   def sort_and_check(algorithm)
-    algorithm.sort(@unsorted_array).should == @sorted_array
+    algorithm.sort!(@unsorted_array).should == @sorted_array
   end
 
 end
