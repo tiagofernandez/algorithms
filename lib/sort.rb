@@ -48,5 +48,14 @@ module Sort
     end
     
   end
+
+  class InsertionSort
+    
+    def sort(array)
+      # TODO
+      array
+    end
+    
+  end
     
 end

@@ -3,7 +3,7 @@ require "sort"
 
 describe Sort do
   
-  before :all do
+  before :each do
     @unsorted_array = DataSet.unsorted_array
     @sorted_array = DataSet.sorted_array
   end
@@ -14,6 +14,10 @@ describe Sort do
 
   it "should perform selection sort" do
     sort_and_check Sort::SelectionSort.new
+  end
+
+  it "should perform insertion sort" do
+    #sort_and_check Sort::InsertionSort.new
   end
 
   def sort_and_check(algorithm)
