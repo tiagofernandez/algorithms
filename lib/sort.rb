@@ -17,9 +17,9 @@ module Sort
     def compare_and_swap(array, index)
       previous = index-1
       if array[index] < array[previous]
-        temp = array[index]
+        min = array[index]
         array[index] = array[previous]
-        array[previous] = temp
+        array[previous] = min
       end
     end
 
@@ -41,9 +41,9 @@ module Sort
     
     def compare_and_swap(array, leftIndex, rightIndex)
       if array[leftIndex] > array[rightIndex]
-        temp = array[leftIndex]
-        array[leftIndex] = array[rightIndex]
-        array[rightIndex] = temp
+        min = array[rightIndex]
+        array[rightIndex] = array[leftIndex]
+        array[leftIndex] = min
       end
     end
     
