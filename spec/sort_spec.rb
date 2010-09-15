@@ -3,11 +3,15 @@ require "sort"
 
 describe Sort do
   
-  it "should sort using bubblesort" do
-    sort Sort::BubbleSort.new
+  it "should perform bubblesort" do
+    sort_and_check Sort::BubbleSort.new
   end
 
-  def sort(algorithm)
+  it "should perform selection sort" do
+    sort_and_check Sort::SelectionSort.new
+  end
+
+  def sort_and_check(algorithm)
     algorithm.sort(DataSet.unsorted_array).should == DataSet.sorted_array
   end
 
