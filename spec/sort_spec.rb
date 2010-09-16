@@ -20,6 +20,10 @@ describe Sort do
     sort_and_check Sort::InsertionSort.new
   end
 
+  it "should perform shell sort" do
+    sort_and_check Sort::ShellSort.new
+  end
+
   def sort_and_check(algorithm)
     algorithm.sort!(@unsorted_array).should == @sorted_array
   end

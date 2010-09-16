@@ -6,21 +6,14 @@ module Sort
       last_index = array.size - 1
       0.upto(last_index) do |i|
         last_index.downto(1) do |j|
-          compare_and_swap array, j
+          if array[j] < array[j-1]
+            min = array[j]
+            array[j] = array[j-1]
+            array[j-1] = min
+          end
         end
       end
       array
-    end
-
-    private
-
-    def compare_and_swap(array, index)
-      previous = index - 1
-      if array[index] < array[previous]
-        min = array[index]
-        array[index] = array[previous]
-        array[previous] = min
-      end
     end
 
   end
@@ -31,20 +24,14 @@ module Sort
       last_index = array.size - 1
       0.upto(last_index) do |i|
         i.upto(last_index) do |j|
-          compare_and_swap array, i, j
+          if array[i] > array[j]
+            min = array[j]
+            array[j] = array[i]
+            array[i] = min
+          end
         end
       end
       array
-    end
-    
-    private
-    
-    def compare_and_swap(array, leftIndex, rightIndex)
-      if array[leftIndex] > array[rightIndex]
-        min = array[rightIndex]
-        array[rightIndex] = array[leftIndex]
-        array[leftIndex] = min
-      end
     end
     
   end
@@ -66,5 +53,27 @@ module Sort
     end
     
   end
+  
+  class ShellSort
     
+    def sort!(array)
+      last_index = array.size - 1
+      gap = array.size / 2
+      while gap > 0
+        gap.upto(last_index) do |i|
+          value = array[i]
+          j = i
+          while j >=gap and array[j-gap] > value
+            array[j] = array[j-gap]
+            j -= gap
+          end
+          array[j] = value
+        end
+        gap /= 2
+      end
+      array
+    end
+
+  end
+  
 end
