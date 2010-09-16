@@ -58,18 +58,18 @@ module Sort
     
     def sort!(array)
       last_index = array.size - 1
-      gap = array.size / 2
-      while gap > 0
-        gap.upto(last_index) do |i|
+      distance = array.size / 2
+      while distance > 0
+        distance.upto(last_index) do |i|
           value = array[i]
           j = i
-          while j >=gap and array[j-gap] > value
-            array[j] = array[j-gap]
-            j -= gap
+          while j >=distance and array[j-distance] > value
+            array[j] = array[j-distance]
+            j -= distance
           end
           array[j] = value
         end
-        gap /= 2
+        distance /= 2
       end
       array
     end
