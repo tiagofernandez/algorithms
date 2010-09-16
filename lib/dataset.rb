@@ -4,11 +4,11 @@ class DataSet
   @@sorted_array = @@unsorted_array.sort
   
   def self.unsorted_array
-    Array.new @@unsorted_array
+    @@unsorted_array.clone
   end
   
   def self.sorted_array
-    Array.new @@sorted_array
+    @@sorted_array.clone
   end
   
 end
