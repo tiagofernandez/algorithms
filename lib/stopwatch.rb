@@ -6,7 +6,7 @@ class StopWatch
 
   def self.stop
     @@stop_time = Time.now
-    puts "Total time: #{@@stop_time - @@start_time}"
+    puts "Total time: #{"%.7f" % (@@stop_time - @@start_time)}"
   end
   
 end

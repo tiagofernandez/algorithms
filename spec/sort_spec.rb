@@ -5,7 +5,7 @@ require "stopwatch"
 describe Sort do
   
   before :each do
-    @unsorted_array = DataSet.random_array
+    @unsorted_array = DataSet.random_array(3500)
     @sorted_array = @unsorted_array.sort
   end
   
