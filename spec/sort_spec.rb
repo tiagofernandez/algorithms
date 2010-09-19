@@ -9,7 +9,7 @@ describe Sort do
     @sorted_array = @unsorted_array.sort
   end
   
-  it "should perform bubblesort" do
+  it "should perform bubble sort" do
     sort_and_check Sort::BubbleSort.new
   end
 
