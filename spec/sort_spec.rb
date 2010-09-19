@@ -1,11 +1,12 @@
 require "dataset"
 require "sort"
+require "stopwatch"
 
 describe Sort do
   
   before :each do
-    @unsorted_array = DataSet.unsorted_array
-    @sorted_array = DataSet.sorted_array
+    @unsorted_array = DataSet.random_array
+    @sorted_array = @unsorted_array.sort
   end
   
   it "should perform bubblesort" do
@@ -25,7 +26,10 @@ describe Sort do
   end
 
   def sort_and_check(algorithm)
+    puts "\nRunning #{algorithm.class.name}..."
+    StopWatch.start
     algorithm.sort!(@unsorted_array).should == @sorted_array
+    StopWatch.stop
   end
 
 end

@@ -1,14 +1,12 @@
 class DataSet
   
-  @@unsorted_array = [1,4,5,2,9,3,6,8,0,7]
-  @@sorted_array = @@unsorted_array.sort
-  
-  def self.unsorted_array
-    @@unsorted_array.clone
-  end
-  
-  def self.sorted_array
-    @@sorted_array.clone
+  def self.random_array
+    array = []
+    number_of_items = 4000
+    number_of_items.times do
+      array << rand(number_of_items)
+    end
+    array
   end
   
 end
