@@ -9,4 +9,12 @@ class DataSet
     array
   end
   
+  def self.random_binary_tree(number_of_nodes)
+    btree = BinaryTree.new
+    number_of_nodes.times do
+      btree.add rand(number_of_nodes)
+    end
+    btree
+  end
+  
 end

@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>spec/search_spec.rb</string>
+	<string>lib/binary_tree.rb</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -49,14 +49,28 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
-		<key>lib/dataset.rb</key>
+		<key>lib/binary_tree.rb</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
 				<integer>0</integer>
 				<key>line</key>
-				<integer>4</integer>
+				<integer>10</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>lib/dataset.rb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>9</integer>
+				<key>line</key>
+				<integer>16</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -84,7 +98,7 @@
 				<key>column</key>
 				<integer>0</integer>
 				<key>line</key>
-				<integer>56</integer>
+				<integer>3</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -110,9 +124,9 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>50</integer>
+				<integer>16</integer>
 				<key>line</key>
-				<integer>8</integer>
+				<integer>0</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -139,6 +153,7 @@
 		<string>README.textile</string>
 		<string>Rakefile</string>
 		<string>lib/dataset.rb</string>
+		<string>lib/binary_tree.rb</string>
 		<string>lib/stopwatch.rb</string>
 		<string>lib/sort.rb</string>
 		<string>spec/sort_spec.rb</string>

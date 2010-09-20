@@ -1,3 +1,4 @@
+require "binary_tree"
 require "dataset"
 require "search"
 require "stopwatch"
@@ -16,6 +17,14 @@ describe Search do
   
   it "should perform binary search" do
     search_and_check Search::BinarySearch.new, @sorted_array
+  end
+  
+  it "should perform breadth-first search" do
+    # TODO DataSet.random_binary_tree(1000000)
+  end
+
+  it "should perform depth-first search" do
+    # TODO DataSet.random_binary_tree(1000000)
   end
 
   def search_and_check(algorithm, array)
