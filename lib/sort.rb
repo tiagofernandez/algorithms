@@ -1,5 +1,7 @@
 module Sort
   
+  # Works by repeatedly stepping through the list to be sorted, comparing each
+  # pair of adjacent items and swapping them if they are in the wrong order.
   class BubbleSort
 
     def sort!(array)
@@ -18,6 +20,9 @@ module Sort
 
   end
   
+  # Finds the minimum value in the list, swaps it with the value in the first
+  # position and repeats the steps for the remainder of the list (starting at
+  # the second position and advancing each time).
   class SelectionSort
     
     def sort!(array)
@@ -36,6 +41,9 @@ module Sort
     
   end
 
+  # Every repetition of insertion sort removes an element from the input data,
+  # inserting it into the correct position in the already-sorted list, until
+  # no input elements remain.
   class InsertionSort
     
     def sort!(array)
@@ -54,6 +62,10 @@ module Sort
     
   end
   
+  # Exploits the fact that insertion sort works efficiently on input that is
+  # already almost sorted. It improves on insertion sort by allowing the comparison
+  # and exchange of elements that are far apart. The last step of Shell sort is a plain
+  # insertion sort, but by then, the array of data is guaranteed to be almost sorted.
   class ShellSort
     
     def sort!(array)
