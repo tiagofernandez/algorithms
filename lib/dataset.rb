@@ -5,15 +5,16 @@ class DataSet
     number_of_items.times do
       array << rand(number_of_items)
     end
-    array[rand(number_of_items)] = extra_item if extra_item != nil
+    array[rand(number_of_items)] = extra_item if extra_item
     array
   end
   
-  def self.random_binary_tree(number_of_nodes)
+  def self.random_binary_tree(number_of_nodes, extra_item=nil)
     btree = BinaryTree.new
     number_of_nodes.times do
       btree.add rand(number_of_nodes)
     end
+    btree.add extra_item if extra_item
     btree
   end
   
