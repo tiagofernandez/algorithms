@@ -45,14 +45,14 @@ module Search
   class DepthFirstSearch
     
     def search(btree, item)
-      return true if btree.eq_left(item) or btree.eq_node(item) or btree.eq_right(item)
-      if btree.left
-        search btree.left, item
-      elsif btree.right
-        search btree.right, item
-      else
+      if btree.eq?(item)
+        return true
+      elsif !btree.has_left? and !btree.has_right?
         return false
-      end
+      end 
+      [btree.left, btree.right].each { |elem|
+        search elem, item if !elem.nil?
+      }
     end
     
   end
@@ -63,9 +63,17 @@ module Search
   class BreadthFirstSearch
     
     def search(btree, item)
-      true # TODO
+      queue = [btree]
+      while !queue.empty?
+        queue.each { |elem|
+          return true if elem.eq?(item)
+          queue.delete elem
+          queue << elem.left if elem.has_left?
+          queue << elem.right if elem.has_right?
+        }
+      end
+      false
     end
-    
   end
   
 end

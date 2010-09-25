@@ -3,6 +3,7 @@ class BinaryTree
   attr_reader :node, :left, :right
   
   def initialize(node)
+    raise ArgumentError if node.nil?
     @node = node
   end
 
@@ -22,16 +23,16 @@ class BinaryTree
     end
   end
   
-  def eq_node(item)
+  def has_left?
+    !@left.nil?
+  end
+  
+  def has_right?
+    !@right.nil?
+  end
+  
+  def eq?(item)
     @node == item
-  end
-
-  def eq_left(item)
-    @left and @left.node == item
-  end
-
-  def eq_right(item)
-    @right and @right.node == item
   end
 
 end

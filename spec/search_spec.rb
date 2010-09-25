@@ -26,18 +26,21 @@ describe Search do
 
   it "should perform breadth-first search" do
     setup_trees
-    # TODO
+    search_and_check Search::BreadthFirstSearch.new, @binary_tree
   end
 
   def search_and_check(algorithm, data_structure)
     puts "\nRunning #{algorithm.class.name}..."
     StopWatch.start
-    algorithm.search(data_structure, @search_item).should_not == -1 || false
+    result = algorithm.search(data_structure, @search_item)
+    result.should_not == nil
+    result.should_not == -1     # array
+    result.should_not == false  # tree
     StopWatch.stop
   end
 
   def setup_arrays
-    @unsorted_array = DataSet.random_array(1000000, @search_item)
+    @unsorted_array = DataSet.random_array(100000, @search_item)
     @sorted_array = @unsorted_array.sort # Quick sort
   end
 
