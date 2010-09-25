@@ -21,7 +21,7 @@ describe Search do
   
   it "should perform depth-first search" do
     setup_trees
-    # TODO
+    search_and_check Search::DepthFirstSearch.new, @binary_tree
   end
 
   it "should perform breadth-first search" do

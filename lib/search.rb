@@ -18,15 +18,15 @@ module Search
   # item, repeat on the items after the middle.
   class BinarySearch
     
-    def search(array, item)
+    def search(sorted_array, item)
       index = -1
       min = 0
-      max = array.size
+      max = sorted_array.size
       until index != -1 or min > max
         mid = min + ((max - min) / 2)
-        if item == array[mid]
+        if item == sorted_array[mid]
           index = mid
-        elsif item > array[mid]
+        elsif item > sorted_array[mid]
           min = mid + 1
         else
           max = mid - 1
@@ -37,17 +37,22 @@ module Search
     
   end
 
-  # Starts at the root (selecting some node as the root in the graph case) and
-  # explores as far as possible along each branch before backtracking. Traversal
-  # of graphs and digraphs:
-  #
+  # Starts at the root and explores as far as possible along each branch before
+  # backtracking. Traversal of graphs and digraphs:
   # - preorder: visit each node before its children.
   # - postorder: visit each node after its children.
   # - inorder (for binary trees only): visit left subtree, node, right subtree.
   class DepthFirstSearch
     
     def search(btree, item)
-      
+      return true if btree.eq_left(item) or btree.eq_node(item) or btree.eq_right(item)
+      if btree.left
+        search btree.left, item
+      elsif btree.right
+        search btree.right, item
+      else
+        return false
+      end
     end
     
   end
@@ -58,7 +63,7 @@ module Search
   class BreadthFirstSearch
     
     def search(btree, item)
-      
+      true # TODO
     end
     
   end

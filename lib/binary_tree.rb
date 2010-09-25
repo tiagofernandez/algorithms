@@ -1,37 +1,37 @@
 class BinaryTree
   
-  def add(value)
-    if @root.nil?
-      @root = BinaryTreeNode.new(value)
-    else
-      @root.add(value)
-    end
+  attr_reader :node, :left, :right
+  
+  def initialize(node)
+    @node = node
   end
 
-end
-
-class BinaryTreeNode
-  
-  attr_reader :value, :left, :right
-  
-  def initialize(value)
-    @value = value
-  end
-
-  def add(value)
-    if value < @value
-      if @left.nil?
-        @left = BinaryTreeNode.new(value)
+  def add(node)
+    if node < @node
+      if @left
+        @left.add node
       else
-        @left.add(value)
+        @left = BinaryTree.new(node)
       end
     else
-      if @right.nil?
-        @right = BinaryTreeNode.new(value)
+      if @right
+        @right.add node
       else
-        @right.add(value)
+        @right = BinaryTree.new(node)
       end
     end
+  end
+  
+  def eq_node(item)
+    @node == item
+  end
+
+  def eq_left(item)
+    @left and @left.node == item
+  end
+
+  def eq_right(item)
+    @right and @right.node == item
   end
 
 end
