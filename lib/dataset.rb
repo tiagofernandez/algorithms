@@ -10,7 +10,7 @@ class DataSet
   end
   
   def self.random_binary_tree(number_of_nodes, extra_item=nil)
-    btree = BinaryTree.new(rand(number_of_nodes))
+    btree = BinaryTreeNode.new(rand(number_of_nodes))
     number_of_nodes.times do
       btree.add rand(number_of_nodes)
     end

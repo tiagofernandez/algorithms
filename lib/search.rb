@@ -44,13 +44,13 @@ module Search
   # - inorder (for binary trees only): visit left subtree, node, right subtree.
   class DepthFirstSearch
     
-    def search(btree, item)
-      if btree.eq?(item)
+    def search(binary_tree_node, item)
+      if binary_tree_node.eq?(item)
         return true
-      elsif !btree.has_left? and !btree.has_right?
+      elsif !binary_tree_node.has_left? and !binary_tree_node.has_right?
         return false
       end 
-      [btree.left, btree.right].each { |elem|
+      [binary_tree_node.left, binary_tree_node.right].each { |elem|
         search elem, item if !elem.nil?
       }
     end
@@ -62,8 +62,8 @@ module Search
   # and so on, until it finds the goal.
   class BreadthFirstSearch
     
-    def search(btree, item)
-      queue = [btree]
+    def search(binary_tree_node, item)
+      queue = [binary_tree_node]
       while !queue.empty?
         queue.each { |elem|
           return true if elem.eq?(item)

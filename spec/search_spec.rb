@@ -1,4 +1,4 @@
-require "binary_tree"
+require "binary_tree_node"
 require "dataset"
 require "search"
 require "stopwatch"

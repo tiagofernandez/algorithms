@@ -1,4 +1,4 @@
-class BinaryTree
+class BinaryTreeNode
   
   attr_reader :node, :left, :right
   
@@ -12,13 +12,13 @@ class BinaryTree
       if @left
         @left.add node
       else
-        @left = BinaryTree.new(node)
+        @left = BinaryTreeNode.new(node)
       end
     else
       if @right
         @right.add node
       else
-        @right = BinaryTree.new(node)
+        @right = BinaryTreeNode.new(node)
       end
     end
   end
