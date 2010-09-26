@@ -11,22 +11,22 @@ h2. Big-Oh Notation
 h3. Cheat-sheets
 
 | O(1) | Constant | Lookup table, hash table. |
-| O(logN) | Logarithmic | Binary search on sorted array, balanced tree search. |
-| O(N) | Linear | Sequential search on unsorted list, search on malformed tree. |
-| O(NlogN) | Linearithmic | Quicksort, heapsort, mergesort. |
-| O(N2) | Quadratic | Buble sort, shell sort, quick sort (worst case), selection sort, insertion sort. |
-| O(Nc), c > 1 | Polynomial | Bipartite graphs. |
-| O(cN), c > 1 | Exponential | Brute-force search. |
-| O(N!) | Factorial | Brute-force search. |
+| O(log n) | Logarithmic | Binary search on sorted array, balan^ced tree search. |
+| O(n) | Linear | Sequential search on unsorted list, search on malformed tree. |
+| O(n log n) | Linearithmic | Quicksort, heapsort, mergesort. |
+| O(n^2) | Quadratic | Buble sort, shell sort, quick sort (worst case), selection sort, insertion sort. |
+| O(n^c), c > 1 | Polynomial | Bipartite graphs. |
+| O(c^N), c > 1 | Exponential | Brute-force search. |
+| O(n!) | Factorial | Brute-force search. |
 
 | O(1) | The input data set doesn't matter. |
-| O(logN) | Doubling the size of the input data set has little effect on the growth. |
-| O(N) | Performance is directly proportional to input data set. |
-| O(N2) | Performance is directly proportional to the square of the size of the input data set. |
-| O(2N) | Growth will double with each additional element in the input data set. |
+| O(log n) | Doubling the size of the input data set has little effect on the growth. |
+| O(n) | Performan^ce is directly proportional to input data set. |
+| O(n^2) | Performan^ce is directly proportional to the square of the size of the input data set. |
+| O(2^n) | Growth will double with each additional element in the input data set. |
 
 |_. Algorithm |_. Best |_. Worst |_. Average |_. Comment |
-| Bubble sort | O(N) | O(N2) | O(N2) | Only good with ideal data. |
-| Selection sort | O(N2) | O(N2) | O(N2) | Best O(N2) sort. |
-| Quick sort | O(NlogN) | O(N2) | O(NlogN) | Good, but not with O(N2). |
-| Heap sort | O(NlogN) | O(NlogN) | O(NlogN) | Slower than QS, but worst case is much better. |
+| Bubble sort | O(n) | O(n^2) | O(n^2) | Only good with ideal data. |
+| Selection sort | O(n^2) | O(n^2) | O(n^2) | Best O(n^2) sort. |
+| Quick sort | O(n log n) | O(n^2) | O(n log n) | Good, but not with O(n^2). |
+| Heap sort | O(n log n) | O(n log n) | O(n log n) | Slower than QS, but worst case is much better. |
