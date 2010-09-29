@@ -45,7 +45,7 @@ describe Search do
   end
 
   def setup_trees
-    @binary_tree = DataSet.random_binary_tree(100000, @search_item)
+    @binary_tree = DataSet.random_binary_tree(10000, @search_item)
   end
 
 end
