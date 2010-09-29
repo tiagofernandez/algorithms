@@ -25,6 +25,10 @@ describe Sort do
     sort_and_check Sort::ShellSort.new
   end
 
+  it "should perform quick sort" do
+    sort_and_check Sort::QuickSort.new
+  end
+
   def sort_and_check(algorithm)
     puts "\nRunning #{algorithm.class.name}..."
     StopWatch.start
