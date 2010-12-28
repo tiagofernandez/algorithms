@@ -16,16 +16,14 @@ end
 
 namespace :test do
   desc "Run all specs."
-  RSpec::Core::RakeTask.new(:spec) do |spec|
-    spec.pattern = FileList["spec/**/*_spec.rb"]
+  RSpec::Core::RakeTask.new(:spec) do |t|
+    t.verbose = false
   end
- 
-  desc "Generate test coverage and specs reports."
-  RSpec::Core::RakeTask.new(:coverage) do |rcov|
-    rcov.rcov = true
-    rcov.pattern = "reports/coverage"
-    rcov.rspec_opts = ["--format", "html:reports/specs/index.html", "--diff"]
-    rcov.fail_on_error = false
-    rcov.verbose = true
+  
+  # rcov broken with rspec2 (http://goo.gl/kfzuh)
+  RSpec::Core::RakeTask.new(:coverage) do |t|
+    t.rcov = true
+    t.rcov_opts =  ['--exclude', 'spec']
+    t.verbose = false
   end
 end
