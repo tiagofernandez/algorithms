@@ -1,3 +1,4 @@
+require "rspec"
 require "dataset"
 require "sort"
 require "stopwatch"

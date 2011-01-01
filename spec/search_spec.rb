@@ -1,3 +1,4 @@
+require "rspec"
 require "binary_tree_node"
 require "dataset"
 require "search"
